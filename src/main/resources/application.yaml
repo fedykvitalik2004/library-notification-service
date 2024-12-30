@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: library-notifications-service
+  kafka:
+    consumer:
+      group-id: notifications
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      bootstrap-servers: localhost:9092
+    properties:
+      spring:
+        json:
+          trusted:
+            packages: "*"
+          type:
+#            mapping: "userRegistrationNotificationDto:org.vitalii.fedyk.librarynotificationsservice.dto.UserRegistrationNotificationDto"
+            mapping: "userRegistrationNotificationDto:org.vitalii.fedyk.librarynotificationsservice.dto.UserRegistrationNotificationDto,borrowedBookNotificationDto:org.vitalii.fedyk.librarynotificationsservice.dto.BorrowedBookNotificationDto"
+server:
+  port: 9090
