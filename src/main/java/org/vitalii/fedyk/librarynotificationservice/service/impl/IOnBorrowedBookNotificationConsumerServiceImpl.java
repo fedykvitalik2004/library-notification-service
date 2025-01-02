@@ -7,7 +7,8 @@ import org.vitalii.fedyk.librarynotificationservice.dto.BorrowedBookNotification
 @Service
 public class IOnBorrowedBookNotificationConsumerServiceImpl implements IOnBorrowedBookNotificationConsumerService {
     @Override
-    public void onBorrowedBookNotification(final BorrowedBookNotificationDto payload, final BorrowedBookNotificationDtoHeaders headers) {
+    public void onBorrowedBookNotification(final BorrowedBookNotificationDto payload,
+                                           final BorrowedBookNotificationDtoHeaders headers) {
         System.out.println(payload);
     }
 }

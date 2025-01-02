@@ -7,7 +7,8 @@ import org.vitalii.fedyk.librarynotificationservice.dto.UserRegistrationNotifica
 @Service
 public class IOnUserRegistrationNotificationConsumerServiceImpl implements IOnUserRegistrationNotificationConsumerService {
     @Override
-    public void onUserRegistrationNotification(final UserRegistrationNotificationDto payload, final UserRegistrationNotificationDtoHeaders headers) {
+    public void onUserRegistrationNotification(final UserRegistrationNotificationDto payload,
+                                               final UserRegistrationNotificationDtoHeaders headers) {
         System.out.println(payload);
     }
 }
