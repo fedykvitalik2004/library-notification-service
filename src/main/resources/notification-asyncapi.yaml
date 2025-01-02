@@ -7,25 +7,17 @@ servers:
     host: localhost:9092
     protocol: kafka
 channels:
-  userRegistrationNotification:
-    description: This channel contains a message per each user who signs up in our application.
-    address: user-registration-notification
-    messages:
-      message:
-        $ref: '#/components/messages/userRegistrationNotification'
   borrowedBookNotification:
     description: This channel contains a message per each book that is borrowed.
-    address: borrowed-book-notification
+    address: book-notification
     messages:
-      message:
-        $ref: '#/components/messages/borrowedBookNotification'
+      BorrowedBookNotification:
+        $ref: '#/components/messages/BorrowedBookNotification'
 operations:
-  onUserRegistrationNotification:
-    action: send
-    channel:
-      $ref: '#/channels/userRegistrationNotification'
   onBorrowedBookNotification:
     action: send
+    messages:
+      - $ref: '#/components/messages/BorrowedBookNotification'
     channel:
       $ref: '#/channels/borrowedBookNotification'
 components:
@@ -41,13 +33,6 @@ components:
       description: This property describes the first name of the user
       examples:
         - John
-    UserRegistrationNotificationDto:
-      type: object
-      properties:
-        firstName:
-          $ref: '#/components/schemas/firstName'
-        email:
-          $ref: '#/components/schemas/email'
     BorrowedBookNotificationDto:
       type: object
       properties:
@@ -61,9 +46,9 @@ components:
           examples:
             - Book Name
   messages:
-    userRegistrationNotification:
-      payload:
-        $ref: '#/components/schemas/UserRegistrationNotificationDto'
-    borrowedBookNotification:
+    BorrowedBookNotification:
+      name: BorrowedBookNotification
+      title: Borrowed Book Notification
+      contentType: application/json
       payload:
         $ref: '#/components/schemas/BorrowedBookNotificationDto'

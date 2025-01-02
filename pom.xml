@@ -53,17 +53,8 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.springframework.kafka</groupId>
-            <artifactId>spring-kafka-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-stream-binder-kafka-streams</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-stream-binder-kafka</artifactId>
+            <artifactId>spring-cloud-starter-stream-kafka</artifactId>
         </dependency>
     </dependencies>
     <dependencyManagement>
@@ -89,7 +80,6 @@
                             <artifactId>lombok</artifactId>
                         </path>
                     </annotationProcessorPaths>
-                    <generatedSourcesDirectory>${project.build.directory}/generated-sources</generatedSourcesDirectory>
                 </configuration>
             </plugin>
             <plugin>
@@ -167,5 +157,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

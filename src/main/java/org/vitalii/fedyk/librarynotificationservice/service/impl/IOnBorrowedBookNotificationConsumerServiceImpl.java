@@ -8,6 +8,6 @@ import org.vitalii.fedyk.librarynotificationservice.dto.BorrowedBookNotification
 public class IOnBorrowedBookNotificationConsumerServiceImpl implements IOnBorrowedBookNotificationConsumerService {
     @Override
     public void onBorrowedBookNotification(BorrowedBookNotificationDto payload, BorrowedBookNotificationDtoHeaders headers) {
-
+        System.out.println(payload);
     }
 }
