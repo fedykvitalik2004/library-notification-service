@@ -1,4 +1,4 @@
-package org.vitalii.fedyk.librarynotificationsservice;
+package org.vitalii.fedyk.librarynotificationservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

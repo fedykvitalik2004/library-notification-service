@@ -21,11 +21,11 @@ channels:
         $ref: '#/components/messages/borrowedBookNotification'
 operations:
   onUserRegistrationNotification:
-    action: receive
+    action: send
     channel:
       $ref: '#/channels/userRegistrationNotification'
   onBorrowedBookNotification:
-    action: receive
+    action: send
     channel:
       $ref: '#/channels/borrowedBookNotification'
 components:
@@ -41,14 +41,14 @@ components:
       description: This property describes the first name of the user
       examples:
         - John
-    userRegistrationNotificationDto:
+    UserRegistrationNotificationDto:
       type: object
       properties:
         firstName:
           $ref: '#/components/schemas/firstName'
         email:
           $ref: '#/components/schemas/email'
-    borrowedBookNotificationDto:
+    BorrowedBookNotificationDto:
       type: object
       properties:
         firstName:
@@ -63,7 +63,7 @@ components:
   messages:
     userRegistrationNotification:
       payload:
-        $ref: '#/components/schemas/userRegistrationNotificationDto'
+        $ref: '#/components/schemas/UserRegistrationNotificationDto'
     borrowedBookNotification:
       payload:
-        $ref: '#/components/schemas/borrowedBookNotificationDto'
+        $ref: '#/components/schemas/BorrowedBookNotificationDto'

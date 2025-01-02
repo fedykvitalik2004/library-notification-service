@@ -1,4 +1,4 @@
-package org.vitalii.fedyk.librarynotificationsservice.constant;
+package org.vitalii.fedyk.librarynotificationservice.constant;
 
 public class TopicConstants {
     public static final String USER_REGISTRATION_NOTIFICATION = "user-registration-notification";
