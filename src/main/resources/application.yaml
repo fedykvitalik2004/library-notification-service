@@ -2,6 +2,8 @@ spring:
   application:
     name: library-notifications-service
   cloud:
+    function:
+      definition: on-user-registration-notification;on-borrowed-book-notification
     stream:
       bindings:
         on-user-registration-notification-in-0:
@@ -18,5 +20,7 @@ spring:
           auto-create-topics: true
           configuration:
             auto.offset.reset: earliest
+groups:
+  notification: notification
 server:
   port: 9090
